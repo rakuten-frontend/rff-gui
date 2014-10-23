@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Bower
+bower_components/
+
+# node-webkit Runtime
+node-webkit.app
+nw.exe
+ffmpegsumo.dll
+icudt.dll
+libEGL.dll
+libGLESv2.dll
+nw.pak
+
+# Sass
+.sass-cache/
+
+# Ignored Files
+dist/app/
+.tmp/
