@@ -17,3 +17,6 @@ This app works on cross-platform -- Windows, Mac and Linux.
 ![Library](docs/screenshots/library.png)
 ![Library List](docs/screenshots/library-list.png)
 ![Console](docs/screenshots/console.png)
+
+---
+Copyright (c) 2014 Rakuten, Inc.
