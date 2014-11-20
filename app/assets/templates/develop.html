@@ -1,0 +1,19 @@
+<div class="content-develop">
+  <div class="processing-bar" ng-show="isProcessing()"></div>
+  <form ng-submit="submit()">
+    <label>Command</label>
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="model.command" autofocus required>
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-basic" ng-disabled="hasChildProcess()">&crarr;</button>
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-basic btn-block" ng-click="quit()" ng-disabled="!hasChildProcess()">Quit</button>
+      </div>
+    </div>
+  </form>
+</div>

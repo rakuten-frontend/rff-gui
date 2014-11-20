@@ -19,6 +19,7 @@ nw.pak
 
 # Sass
 .sass-cache/
+*.css.map
 
 # Ignored Files
 dist/app/

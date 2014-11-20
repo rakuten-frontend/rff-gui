@@ -1,0 +1,52 @@
+// Menu
+.menu {
+  user-select: none;
+  .nav-stacked > li + li {
+    margin-top: 0;
+  }
+  .nav-pills > li {
+    + li {
+      margin-top: 0;
+    }
+    > a {
+      position: relative;
+      border-radius: 0;
+      color: #ccc;
+      transition-property: color, background-color;
+      transition-duration: 150ms;
+      &:hover,
+      &:focus {
+        color: #eee;
+        background: #3c3c3c;
+      }
+    }
+    &.active > a {
+      color: #fff;
+      background: #428bca;
+    }
+  }
+  .processing {
+    display: block;
+    float: right;
+    position: relative;
+    top: -2px;
+    right: -4px;
+    transform: scale(1);
+    &.ng-hide {
+      transform: scale(0);
+    }
+    &.ng-hide-add,
+    &.ng-hide-remove {
+      transition: 0ms ease-out all 200ms;
+      display: block !important;
+    }
+    &.ng-hide-add-active,
+    &.ng-hide-remove-active {
+      transition: 250ms ease-out all 200ms;
+    }
+  }
+  .icon-processing-white {
+    width: 18px;
+    height: 18px;
+  }
+}

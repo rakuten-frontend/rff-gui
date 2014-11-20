@@ -1,0 +1,143 @@
+// Main content
+.content {
+  user-select: none;
+  @mixin content-inner {
+    position: relative;
+    overflow-y: auto;
+    max-height: 500px;
+    padding: 20px;
+  }
+  .content-generate {
+    @include content-inner;
+    height: 480px;
+  }
+  .content-build {
+    @include content-inner;
+    height: 480px;
+  }
+  .content-library {
+    @include content-inner;
+    height: 480px;
+    .table-container {
+      height: 399px;
+    }
+  }
+  .content-library-list {
+    padding: 20px;
+    .table-container {
+      height: 399px;
+    }
+    .loading,
+    .error {
+      padding-top: 170px;
+      text-align: center;
+    }
+    .functions {
+      .pull-left {
+        .btn {
+          min-width: 60px;
+        }
+        .form-control {
+          width: 280px;
+        }
+        .sub-text {
+          vertical-align: middle;
+          font-size: 11px;
+          color: #999;
+        }
+      }
+    }
+  }
+  .content-develop {
+    @include content-inner;
+  }
+  .processing-bar {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #428bca;
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 16px 16px;
+    animation: processing-bar-stripes 500ms linear infinite;
+    &.ng-hide {
+      transform: translateY(-4px);
+    }
+    &.ng-hide-add,
+    &.ng-hide-remove {
+      transition: 0ms ease-out all 200ms;
+      display: block !important;
+    }
+    &.ng-hide-add-active,
+    &.ng-hide-remove-active {
+      transition: 150ms ease-out all 200ms;
+    }
+  }
+  .notification {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 50%;
+    width: 120px;
+    margin-left: -60px;
+    padding: 4px 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #666;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+    &.success {
+      background-color: $brand-success;
+    }
+    &.danger {
+      background-color: $brand-danger;
+    }
+    &.ng-hide {
+      transform: translateY(-105%);
+    }
+    &.ng-hide-add,
+    &.ng-hide-remove {
+      transition: 0ms ease-out transform 200ms;
+      display: block !important;
+    }
+    &.ng-hide-add-active,
+    &.ng-hide-remove-active {
+      transition: 150ms ease-out transform 200ms;
+    }
+  }
+  .functions {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    .btn {
+      min-width: 90px;
+    }
+    .pull-left {
+      .btn,
+      .form-control {
+        margin-right: 8px;
+      }
+    }
+    .pull-right {
+      .btn,
+      .form-control {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+@keyframes processing-bar-stripes {
+  from { background-position: 16px 0; }
+  to   { background-position: 0 0; }
+}

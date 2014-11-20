@@ -1,0 +1,84 @@
+<div class="content-generate">
+  <div class="processing-bar" ng-show="isProcessing()"></div>
+  <div class="notification" ng-show="model.notification.show" ng-class="model.notification.status">{{model.notification.message}}</div>
+  <form ng-submit="generate()">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Project Name</label>
+          <div>
+            <input type="text" class="form-control" placeholder="My New Project" ng-model="storage.settings.name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Markup</label>
+          <div>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.markup" value="html">HTML</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.markup" value="jade">Jade</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Stylesheet</label>
+          <div>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.style" value="css">CSS</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.style" value="sass">Sass</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.style" value="less">Less</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.style" value="stylus">Stylus</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Script</label>
+          <div>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.script" value="js">JavaScript</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.script" value="coffee">CoffeeScript</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Testing Framework</label>
+          <div>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.testFramework" value="mocha">Mocha</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.testFramework" value="jasmine">Jasmine</label>
+            <label class="radio-inline"><input type="radio" ng-model="storage.settings.testFramework" value="none">None</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Project Folder</label>
+          <div class="input-group dir-select">
+            <input type="text" class="form-control" ng-model="storage.workingDir" required>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-basic" ng-click="selectDir('workingDir')">...</button>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Options</label>
+          <div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="storage.settings.options['cssmin']">Minification of CSS</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="storage.settings.options['uglify']">Minification of JavaScript</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="storage.settings.options['autoprefixer']">CSS Autoprefixing</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="storage.settings.options['rev']">Static Assets Revisioning</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="storage.settings.options['ssi']">SSI Support in Preview Server</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="functions clearfix">
+      <div class="pull-right">
+        <!-- <label class="checkbox-inline"><input type="checkbox" ng-model="storage.install">Install Dependencies</label> -->
+        <button type="submit" class="btn btn-basic" ng-disabled="isInCommandQueue('generate')">Create Project</button>
+      </div>
+    </div>
+  </form>
+</div>

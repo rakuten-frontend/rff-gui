@@ -1,0 +1,77 @@
+<div class="overlay">
+  <div class="overlay-content">
+    <div class="content-library-list">
+      <div class="processing-bar" ng-show="isProcessing()"></div>
+      <div class="notification" ng-show="model.notification.show" ng-class="model.notification.status">{{model.notification.message}}</div>
+      <div class="table-container" id="results-container">
+        <table class="table table-basic">
+          <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 17%;">
+            <col style="width: 10%;">
+            <col style="width: 16%;">
+            <col style="width: 15%;">
+            <col style="width: 12%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th ng-class="getSortedClass('name')" ng-click="sortBy('name')">Name</th>
+              <th ng-class="getSortedClass('owner')" ng-click="sortBy('owner')">Owner</th>
+              <th class="text-right" ng-class="getSortedClass('stars')" ng-click="sortBy('stars')">Stars</th>
+              <th ng-class="getSortedClass('updated')" ng-click="sortBy('updated')">Updated</th>
+              <th>Version</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="component in model.results" ng-switch on="isInstalled(component.name)">
+              <th>
+                <a class="pointer" title="{{component.description}}" ng-click="openUrl(component.website)">{{component.name}}</a>
+              </th>
+              <td>{{component.owner}}</td>
+              <td class="text-right">{{component.stars}}</td>
+              <td>{{timeago(component.updated)}}</td>
+              <td>
+                <div ng-switch-when="false">
+                  <input type="text" class="form-control input-sm" placeholder="Latest" ng-model="component.version" ng-init="component.version=''">
+                </div>
+                <div ng-switch-when="true">
+                  <input type="text" class="form-control input-sm" placeholder="Latest" disabled ng-value="getVersion(component.name)">
+                </div>
+              </td>
+              <td class="text-right">
+                <div ng-switch-when="false">
+                  <button type="button" class="btn btn-basic btn-sm" ng-click="install(component.name, component.version)" ng-disabled="isInCommandQueue('install-' + component.name)">Install</button>
+                </div>
+                <div ng-switch-when="true">
+                  <button type="button" class="btn btn-basic btn-sm" ng-click="uninstall(component.name)" ng-disabled="isInCommandQueue('uninstall-' + component.name)">Uninstall</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="loading" ng-show="model.searching">
+          <span class="icon-processing"></span>
+        </div>
+        <div class="error" ng-show="model.loadingError">
+          Couldn't fetch packages list from the registry.<br>
+          Please try again later.
+        </div>
+      </div>
+      <div class="functions clearfix">
+        <div class="pull-left form-inline">
+          <button type="button" class="btn btn-basic" ng-click="goPrev()" ng-disabled="!model.hasPrev()">Prev</button>
+          <button type="button" class="btn btn-basic" ng-click="goNext()" ng-disabled="!model.hasNext()">Next</button>
+          <div class="search-field">
+            <input type="search" class="form-control" placeholder="Package Name or Keyword" ng-model="query" ng-disabled="!model.loaded">
+            <span class="icon glyphicon glyphicon-search"></span>
+          </div>
+          <span class="sub-text" ng-show="model.loaded">{{model.count}} Results</span>
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-basic" ui-sref="library" ng-disabled="isProcessing()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

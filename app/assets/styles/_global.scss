@@ -1,0 +1,93 @@
+// Global styles
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  cursor: default;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+input[type=search] {
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+  }
+}
+
+// Override Bootstrap styles
+a,
+.btn,
+.radio label,
+.checkbox label,
+.radio-inline,
+.checkbox-inline {
+  cursor: default;
+}
+.pointer {
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.radio label,
+.checkbox label {
+  padding-left: 18px;
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-left: -18px;
+}
+
+.form-control {
+  padding-left: 4px;
+  padding-right: 4px;
+  transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+  &[readonly] {
+    background-color: #fff;
+    cursor: auto;
+  }
+  &[disabled] {
+    cursor: auto;
+  }
+  &:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px 1px rgba(102, 175, 233, 0.6);
+  }
+}
+.has-success .form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px 1px #67b168;
+}
+.has-warning .form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px 1px #c0a16b;
+}
+.has-error .form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px 1px #ce8483;
+}
+
+.input-group-btn > .btn:hover {
+  z-index: 0;
+}
+
+pre {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+  font-size: 11px;
+  line-height: 1.3;
+  color: #888;
+  background-color: #fff;
+}

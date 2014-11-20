@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="MainController">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{service.name}}</title>
+    <!-- build:css /assets/styles/app.css -->
+    <link rel="stylesheet" href="/assets/styles/app.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div class="app">
+      <div class="menu" ng-controller="MenuController" ng-include="templateUrl"></div>
+      <div class="main">
+        <div class="content" ui-view></div>
+        <div class="console" ng-controller="ConsoleController" ng-include="templateUrl" onload="included()"></div>
+      </div>
+    </div>
+    <!-- build:js /assets/scripts/app.js -->
+    <script src="/assets/vendor/angular/angular.js"></script>
+    <script src="/assets/vendor/angular-ui-router/angular-ui-router.js"></script>
+    <script src="/assets/vendor/angular-animate/angular-animate.js"></script>
+    <script src="/assets/vendor/angular-scroll/angular-scroll.js"></script>
+    <script src="/assets/vendor/ngStorage/ngStorage.js"></script>
+    <script src="/assets/vendor/lzadialog/lzadialog.js"></script>
+    <script src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/controllers/main.js"></script>
+    <script src="/assets/scripts/controllers/menu.js"></script>
+    <script src="/assets/scripts/controllers/content.js"></script>
+    <script src="/assets/scripts/controllers/generate.js"></script>
+    <script src="/assets/scripts/controllers/build.js"></script>
+    <script src="/assets/scripts/controllers/library.js"></script>
+    <script src="/assets/scripts/controllers/library-list.js"></script>
+    <script src="/assets/scripts/controllers/develop.js"></script>
+    <script src="/assets/scripts/controllers/console.js"></script>
+    <script src="/assets/scripts/services/main.js"></script>
+    <script src="/assets/scripts/services/content.js"></script>
+    <script src="/assets/scripts/services/generate.js"></script>
+    <script src="/assets/scripts/services/build.js"></script>
+    <script src="/assets/scripts/services/library.js"></script>
+    <script src="/assets/scripts/services/library-list.js"></script>
+    <script src="/assets/scripts/services/develop.js"></script>
+    <script src="/assets/scripts/services/console.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<div class="content-build">
+  <div class="processing-bar" ng-show="isProcessing()"></div>
+  <div class="notification" ng-show="model.notification.show" ng-class="model.notification.status">{{model.notification.message}}</div>
+  <div class="form-group">
+    <label>Project Folder</label>
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="input-group dir-select">
+          <input type="text" class="form-control" ng-model="storage.workingDir">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-basic" ng-click="selectDir('workingDir')">...</button>
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-basic btn-block" ng-click="open(storage.workingDir)" ng-disabled="!hasValidDir()">Open</button>
+      </div>
+    </div>
+  </div>
+  <div class="functions clearfix">
+    <div class="pull-left">
+      <button type="button" class="btn btn-basic" ng-click="registerCommand(['npm install', 'bower install'], 'install')" ng-disabled="!hasValidPackage() || isInCommandQueue('install')">Install</button>
+    </div>
+    <div class="pull-right" ng-switch on="isInWorkers('serve')">
+      <span ng-switch-when="false">
+        <button type="button" class="btn btn-basic" ng-click="execute('grunt serve', 'serve')" ng-disabled="!hasValidConfig()">Start Server</button>
+      </span>
+      <span ng-switch-when="true">
+        <button type="button" class="btn btn-basic" ng-click="kill('serve')" ng-disabled="!hasValidConfig()">Stop Server</button>
+      </span>
+      <button type="button" class="btn btn-basic" ng-click="registerCommand('grunt lint', 'lint')" ng-disabled="!hasValidConfig() || isInCommandQueue('lint')">Validate</button>
+      <button type="button" class="btn btn-basic" ng-click="registerCommand('grunt', 'default')" ng-disabled="!hasValidConfig() || isInCommandQueue('default')">Build</button>
+    </div>
+  </div>
+</div>

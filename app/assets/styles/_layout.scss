@@ -1,0 +1,29 @@
+// Layout
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.menu {
+  flex-basis: 180px;
+  flex-shrink: 0;
+  background: #222;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background: #f3f3f3;
+}
+
+.content {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.console {
+  flex-basis: 150px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}

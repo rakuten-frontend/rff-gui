@@ -1,0 +1,15 @@
+{
+  "name": "rff-gui",
+  "version": "0.3.0-beta",
+  "description": "Cross-platform application for smart development of web front-end",
+  "main": "app://rff-gui/index.html",
+  "node-main": "node-main.js",
+  "window": {
+    "width": 800,
+    "height": 500,
+    "toolbar": false,
+    "resizable": false,
+    "fullscreen": false,
+    "show": false
+  }
+}

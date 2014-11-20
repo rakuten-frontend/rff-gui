@@ -1,0 +1,24 @@
+{
+  "name": "rff-gui",
+  "version": "0.3.0-beta",
+  "description": "Cross-platform application for smart development of web front-end",
+  "main": "app://rff-gui/index.html",
+  "node-main": "node-main.js",
+  "window": {
+    "width": 800,
+    "height": 500,
+    "toolbar": true,
+    "resizable": false,
+    "fullscreen": false,
+    "show": false
+  },
+  "dependencies": {
+    "ansi-html-stream": "0.0.3",
+    "lodash": "2.4.1",
+    "mkdirp": "0.5.0",
+    "moment": "2.6.0",
+    "open": "0.0.4",
+    "ps-tree": "0.0.3",
+    "win-spawn": "2.0.0"
+  }
+}

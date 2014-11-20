@@ -1,0 +1,35 @@
+// Bootstrap-sass variables
+
+// Typography
+$font-family-sans-serif: "Lucida Grande", "Segoe UI", Arial, sans-serif;
+$font-size-base: 13px;
+
+// Components
+$padding-xs-vertical: 1px;
+$padding-small-vertical: 1px;
+$padding-base-vertical: 2px;
+$padding-large-vertical: 3px;
+
+$padding-xs-horizontal: 4px;
+$padding-small-horizontal: 6px;
+$padding-base-horizontal: 8px;
+$padding-large-horizontal: 10px;
+$border-radius-base: 3px;
+
+// Tables
+$table-bg-hover: #ecf4f8;
+$table-cell-padding: 6px 8px;
+$table-condensed-cell-padding: 4px 5px;
+$table-bg-accent: #f8f8f8;
+
+// Buttons
+$btn-default-border: #aaa;
+
+// Forms
+$input-border: #aaa;
+
+// Grid system
+$grid-gutter-width: 20px;
+
+// Web Fonts
+$icon-font-path: "/assets/vendor/bootstrap-sass-official/fonts/";
