@@ -6730,7 +6730,7 @@ pre {
   line-height: 1;
   vertical-align: text-top;
   -webkit-animation: spin 1s infinite ease-out;
-  animation: spin 1s infinite ease-out;
+          animation: spin 1s infinite ease-out;
 }
 
 .icon-processing-white {
@@ -6746,7 +6746,7 @@ pre {
   line-height: 1;
   vertical-align: text-top;
   -webkit-animation: spin 1s infinite ease-out;
-  animation: spin 1s infinite ease-out;
+          animation: spin 1s infinite ease-out;
   border-color: rgba(255, 255, 255, 0.2);
   border-left-color: #fff;
   border-bottom-color: #fff;
@@ -6755,30 +6755,30 @@ pre {
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
+            transform: rotate(20deg);
   }
   50% {
     -webkit-transform: rotate(50deg);
-    transform: rotate(50deg);
+            transform: rotate(50deg);
   }
   100% {
     -webkit-transform: rotate(740deg);
-    transform: rotate(740deg);
+            transform: rotate(740deg);
   }
 }
 
 @keyframes spin {
   0% {
     -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
+            transform: rotate(20deg);
   }
   50% {
     -webkit-transform: rotate(50deg);
-    transform: rotate(50deg);
+            transform: rotate(50deg);
   }
   100% {
     -webkit-transform: rotate(740deg);
-    transform: rotate(740deg);
+            transform: rotate(740deg);
   }
 }
 .overlay {
@@ -6802,24 +6802,24 @@ pre {
 .ng-enter .overlay .overlay-content {
   opacity: 0;
   -webkit-transform: translateY(-40px) scale(0.96);
-  transform: translateY(-40px) scale(0.96);
+          transform: translateY(-40px) scale(0.96);
 }
 .ng-enter-active .overlay .overlay-content {
   transition: 250ms ease-out all;
   opacity: 1;
   -webkit-transform: translateY(0) scale(1);
-  transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 .ng-leave .overlay .overlay-content {
   opacity: 1;
   -webkit-transform: translateY(0) scale(1);
-  transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 .ng-leave-active .overlay .overlay-content {
   transition: 250ms ease-out all;
   opacity: 0;
   -webkit-transform: translateY(-40px) scale(0.96);
-  transform: translateY(-40px) scale(0.96);
+          transform: translateY(-40px) scale(0.96);
 }
 
 .overlay-view.ng-enter, .overlay-view.ng-leave {
@@ -6857,7 +6857,7 @@ pre {
 
 .menu {
   -webkit-user-select: none;
-  user-select: none;
+          user-select: none;
 }
 .menu .nav-stacked > li + li {
   margin-top: 0;
@@ -6887,11 +6887,11 @@ pre {
   top: -2px;
   right: -4px;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
 }
 .menu .processing.ng-hide {
   -webkit-transform: scale(0);
-  transform: scale(0);
+          transform: scale(0);
 }
 .menu .processing.ng-hide-add, .menu .processing.ng-hide-remove {
   transition: 0ms ease-out all 200ms;
@@ -6907,7 +6907,7 @@ pre {
 
 .content {
   -webkit-user-select: none;
-  user-select: none;
+          user-select: none;
 }
 .content .content-generate {
   position: relative;
@@ -6972,11 +6972,11 @@ pre {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 16px 16px;
   -webkit-animation: processing-bar-stripes 500ms linear infinite;
-  animation: processing-bar-stripes 500ms linear infinite;
+          animation: processing-bar-stripes 500ms linear infinite;
 }
 .content .processing-bar.ng-hide {
   -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
+          transform: translateY(-4px);
 }
 .content .processing-bar.ng-hide-add, .content .processing-bar.ng-hide-remove {
   transition: 0ms ease-out all 200ms;
@@ -7006,7 +7006,7 @@ pre {
 }
 .content .notification.ng-hide {
   -webkit-transform: translateY(-105%);
-  transform: translateY(-105%);
+          transform: translateY(-105%);
 }
 .content .notification.ng-hide-add, .content .notification.ng-hide-remove {
   transition: 0ms ease-out -webkit-transform 200ms;
@@ -7072,7 +7072,5 @@ pre {
   line-height: 1.5;
   cursor: default;
   -webkit-user-select: none;
-  user-select: none;
+          user-select: none;
 }
-
-/*# sourceMappingURL=app.css.map */
