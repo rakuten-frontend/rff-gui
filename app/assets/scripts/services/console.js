@@ -54,6 +54,7 @@
           var args = inputArray;
           options = options || {};
           options.cwd = options.cwd || cwd;
+          options.env = process.env;
           return service.execute(command, args, options);
         },
 
