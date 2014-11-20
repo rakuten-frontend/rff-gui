@@ -1,12 +1,9 @@
-# OS
 .DS_Store
-
-# Node.js
 node_modules/
 npm-debug.log
-
-# Bower
 bower_components/
+.sass-cache/
+*.css.map
 
 # node-webkit Runtime
 node-webkit.app
@@ -17,10 +14,6 @@ libEGL.dll
 libGLESv2.dll
 nw.pak
 
-# Sass
-.sass-cache/
-*.css.map
-
-# Ignored Files
+# Ignoring Files
 dist/app/
 .tmp/
