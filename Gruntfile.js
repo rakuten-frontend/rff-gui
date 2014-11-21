@@ -175,8 +175,12 @@ module.exports = function (grunt) {
     'newer:jshint'
   ]);
 
+  grunt.registerTask('test', [
+    'lint'
+  ]);
+
   grunt.registerTask('build', [
-    'lint',
+    'test',
     'sass',
     'autoprefixer',
     'clean:dist',
