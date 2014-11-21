@@ -28,7 +28,7 @@
       <span ng-switch-when="true">
         <button type="button" class="btn btn-basic" ng-click="kill('serve')" ng-disabled="!hasValidConfig()">Stop Server</button>
       </span>
-      <button type="button" class="btn btn-basic" ng-click="registerCommand('grunt lint', 'lint')" ng-disabled="!hasValidConfig() || isInCommandQueue('lint')">Validate</button>
+      <button type="button" class="btn btn-basic" ng-click="registerCommand('grunt test', 'test')" ng-disabled="!hasValidConfig() || isInCommandQueue('test')">Test</button>
       <button type="button" class="btn btn-basic" ng-click="registerCommand('grunt', 'default')" ng-disabled="!hasValidConfig() || isInCommandQueue('default')">Build</button>
     </div>
   </div>
