@@ -111,6 +111,7 @@
             psTree(child.pid, function (err, children) {
               spawn('kill', ['-INT'].concat(children.map(function (p) { return p.PID; })));
             });
+            child.kill('SIGINT');
           }
         },
 
